@@ -1,9 +1,15 @@
 package com.example;
 
-import java.io.*;
-import java.util.*;
-import org.json.simple.*;
-import org.json.simple.parser.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class BirthdayExample {
 
@@ -78,8 +84,14 @@ public class BirthdayExample {
     System.out.print("Enter a name:");
     String name = input.nextLine();
 
-    // print user input
-    System.out.println("name = " + name);
+    // search the name in hash map
+    if (birthdayMap.containsKey(name)) {
+      // print the user name and birthday
+      System.out.println(name + "'s birthday is " + birthdayMap.get(name));
+    } else {
+      System.out.println("The birthday is unknown");
+
+    }
 
     // close the scanner
     input.close();
