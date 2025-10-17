@@ -87,7 +87,7 @@ public class BirthdayExample {
     boolean nameExist = false;
     // create a for loop to search for all names that match the input
     for (String key : birthdayMap.keySet()) {
-      if (key.contains(name)) {
+      if (key.toLowerCase().contains(name.toLowerCase())) {
           // if the input name is part of the key, print the name and birthday
           System.out.println(key + "'s birthday is " + birthdayMap.get(key));
           nameExist = true;
