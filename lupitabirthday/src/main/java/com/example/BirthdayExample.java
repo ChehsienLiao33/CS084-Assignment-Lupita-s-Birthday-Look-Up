@@ -71,7 +71,7 @@ public class BirthdayExample {
     String pathToFile =
       "/Users/youjia/Documents/GitHub/CS084-Assignment-Lupita-s-Birthday-Look-Up/lupitabirthday/src/main/java/com/example/birthday.json";
 
-    // students should change the code below in order to implment their own solution
+    // students should change the code below in order to implement their own solution
 
     // initialize the hash map
     initializeMap(pathToFile);
