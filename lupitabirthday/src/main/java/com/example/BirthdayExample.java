@@ -69,7 +69,7 @@ public class BirthdayExample {
      * extra credit module on Files, Directories, and Folders in Canvas.
      */
     String pathToFile =
-      "/Users/youjia/Documents/GitHub/CS084-Assignment-Lupita-s-Birthday-Look-Up/lupitabirthday/src/main/java/com/example/birthdayOnlyForTesting.json";
+      "/Users/youjia/Documents/GitHub/CS084-Assignment-Lupita-s-Birthday-Look-Up/lupitabirthday/src/main/java/com/example/birthday.json";
 
     // students should change the code below in order to implment their own solution
 
@@ -84,13 +84,18 @@ public class BirthdayExample {
     System.out.print("Enter a name:");
     String name = input.nextLine();
 
-    // search the name in hash map
-    if (birthdayMap.containsKey(name)) {
-      // print the user name and birthday
-      System.out.println(name + "'s birthday is " + birthdayMap.get(name));
-    } else {
+    boolean nameExist = false;
+    // create a for loop to search for all names that match the input
+    for (String key : birthdayMap.keySet()) {
+      if (key.contains(name)) {
+          // if the input name is part of the key, print the name and birthday
+          System.out.println(key + "'s birthday is " + birthdayMap.get(key));
+          nameExist = true;
+      }
+    }
+    if(!nameExist){
+      // If name is not found, print birthday is unknown
       System.out.println("The birthday is unknown");
-
     }
 
     // close the scanner
